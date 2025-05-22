@@ -10,25 +10,28 @@ To write a C Program to perform the basic left shift operation for 44 integer nu
 5.	Stop the program.
 
 ## PROGRAM
+```
+#include <stdio.h>
+
+int main() {
+    int a = 44;
+    int b = 3;
+    int result;
+
+    result = a << b;
+    printf("Result of left shifting %d by %d positions is: %d\n", a, b, result);
+
+    return 0;
+}
+```
 
 ## OUTPUT
 
-
-
-
-
-
-
+![437968629-667a1444-8e40-46cf-a204-8f515cffbd72](https://github.com/user-attachments/assets/f12b83c4-2efc-4158-b000-6922eb601bbf)
 
 
 ## RESULT
 Thus the program to perform the basic left shift operation for 44 integer number with 3 shifts has been executed successfully.
-
-
-
-
- 
- 
 
 
 # EX-17-TWO-NUMBERS-ARE-EQUAL-OR-NOT
@@ -47,17 +50,36 @@ Write a C Program to check whether the two numbers are equal or not using simple
 5.	Stop the program.
 
 ## PROGRAM
+```
+#include <stdio.h>
+
+int main() {
+    int num1, num2;
+    scanf("%d%d", &num1, &num2);
+
+    if (num1 == num2) {
+        printf("Numbers are Equal");
+    }
+    if (num1 != num2) {
+        printf("Numbers are not Equal");
+    }
+
+    return 0;
+}
+```
 
 
 ## OUTPUT
+
+![437968681-d959a5da-9ec7-4120-a261-ce2058c23469](https://github.com/user-attachments/assets/3249f6a6-da4c-4ffe-95e7-b9ac6da6d9fb)
+
+
            
 ## RESULT
 
 Thus the program to check whether the two numbers are equal or not using simple if statement has been executed successfully
  
  
-
-
 # EX-18-STRING-LOWERCASE-CONVERSION
 ## AIM
 Write a C Program to convert the given string into lowercase.
@@ -70,17 +92,31 @@ Write a C Program to convert the given string into lowercase.
 5.	Stop the program.
 
 ## PROGRAM
+```
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char str[100];
+    int i = 0;
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+    while (str[i] != '\0') {
+        str[i] = tolower(str[i]);
+        i++;
+    }
+    printf("Lowercase string: %s\n", str);
+    return 0;
+}
+```
 
 ## OUTPUT
 
-
-
+![437968702-409ed86e-0b15-4c5d-b1e8-5e5ce8e783d4](https://github.com/user-attachments/assets/fa0c4b1e-6e52-4107-85ea-2d095c6ad64e)
 
 ## RESULT
 Thus the program to convert the given string into lowercase has been executed successfully
  
- 
-
 
 # EX-19-COUNT-OF-WORDS-IN-A-STRING
 ## AIM
@@ -95,19 +131,31 @@ Write a C Program to count the total number of words in a given string using do 
 6.	Stop the program.
 
 ## PROGRAM
+```
+#include <stdio.h>
+
+int main() {
+    char s[40];
+    int i = 0, word = 0;
+    scanf("%[^\n]%*c", s);
+    do {
+        if (s[i] == ' ') {
+            word++;
+        }
+        i++;
+    } while (s[i] != '\0');
+    printf("%d", word + 1);
+    return 0;
+}
+```
 
 ## OUTPUT
 
-
-
-
+![437968725-ec31959e-2869-4709-9a6d-a9e1267fbfb6](https://github.com/user-attachments/assets/6b50aa11-6aef-46c4-88b0-253946c9165f)
 
 ## RESULT
 Thus the program to count the total number of words in a given string using do While loop has been executed successfully
  
- 
-
-
 # EX  -20 -COMPARING TWO STRINGS
 ## AIM
 write a Program to compare two strings without using strcmp().
@@ -129,10 +177,40 @@ Step 7: After the loop, check the value of flag:
 Step 8: End the program.
 
 ## PROGRAM
+```
+#include <stdio.h>
+
+int main() {
+    char c1[100], c2[100];
+    int i = 0, flag = 0;
+    printf("Enter first string: ");
+    scanf("%[^\n]%*c", c1);
+    printf("Enter second string: ");
+    scanf("%s", c2);
+    while (c1[i] != '\0' && c2[i] != '\0') {
+        if (c1[i] != c2[i]) {
+            flag = 1;
+            break;
+        }
+        i++;
+    }
+    if (c1[i] != '\0' || c2[i] != '\0') {
+        flag = 1;
+    }
+    if (flag == 0) {
+        printf("Strings are same.\n");
+    } else {
+        printf("Strings are not same.\n");
+    }
+    return 0;
+}
+```
 
 
 ## OUTPUT
- 
+
+![437968747-ca3040a4-7578-4984-9038-5fccc1df4a3a](https://github.com/user-attachments/assets/235be47e-1dc1-4c48-b111-9b9d0635c77a)
+
 
 ## RESULT
 Thus the C Program to compare two strings without using strcmp() has been executed successfully.
